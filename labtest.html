@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Test Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" target="_blank">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Our Medicines</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Fever</a></li>
+                    <li><a href="#">Muscle Pains</a></li>
+                    <li><a href="#">Cold and Cough</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Health Care</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Baby Care</a></li>
+                    <li><a href="#">Skin Care</a></li>
+                    <li><a href="#">Home Care</a></li>
+                    <li><a href="#">Personal Care</a></li>
+                    <li><a href="#">Pet Care</a></li>
+                </ul>
+            </li>
+            <li><a href="labtest.html" target="_blank">Lab Test</a></li>
+        </ul>
+    </nav>
+    <main class="form-container">
+        <div class="form-content">
+            <form id="labTestForm">
+                <h2>1. Your Contact Details</h2>
+                <div class="row">
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                    <input type="text" id="patientId" name="patientId" placeholder="Patient ID (if exists)">
+                </div>
+                <div class="row">
+                    <input type="text" id="contactNumber" name="contactNumber" placeholder="Contact Number" required>
+                    <input type="email" id="email" name="email" placeholder="Email ID" required>
+                </div>
+
+                <h2>2. Address</h2>
+                <div class="row">
+                    <input type="text" id="houseNumber" name="houseNumber" placeholder="House Number" required>
+                    <input type="text" id="street" name="street" placeholder="Street" required>
+                </div>
+                <input type="text" id="area" name="area" placeholder="Area" required>
+                <select id="district" name="district" required>
+                    <option value="">Choose District</option>
+                    <option value="district1">District 1</option>
+                    <option value="district2">District 2</option>
+                    <option value="district3">District 3</option>
+                    <option value="district4">District 4</option>
+                </select>
+
+                <h2>3. Choose the Test Type</h2>
+                <p>Check at least one box without fail</p>
+                <label><input type="checkbox" name="testType" value="CBC" required> CBC</label>
+                <label><input type="checkbox" name="testType" value="Complete Urine" required> Complete Urine</label>
+                <label><input type="checkbox" name="testType" value="Lipid Profile" required> Lipid Profile</label>
+                <label><input type="checkbox" name="testType" value="TSH" required> Thyroid Stimulating Hormone (TSH)</label>
+                <label><input type="checkbox" name="testType" value="Glucose Test" required> Glucose Test</label>
+
+                <h2>4. Do you want a hard copy of the report also?</h2>
+                <label><input type="radio" name="hardCopy" value="Yes" required> Yes</label>
+                <label><input type="radio" name="hardCopy" value="No" required> No</label>
+
+                <h2>5. Select Your Comfortable Date and Time</h2>
+                <input type="date" id="date" name="date" required>
+                <input type="time" id="time" name="time" required>
+
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="form-image">
+            <img src="images/lab-test.jpg" alt="Lab Test">
+        </div>
+    </main>
+    <footer>
+        <p>@copyright. Only for demonstration purposes</p>
+    </footer>
+    <script>
+        document.getElementById('labTestForm').addEventListener('submit', function(event) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Please select at least one test type.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

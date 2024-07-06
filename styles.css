@@ -1,0 +1,279 @@
+/* Add to existing styles.css */
+
+/* Navigation bar styles */
+nav {
+    background-color: #817d7d;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #161414;
+    color: white;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 10px;
+    width: 160px;
+    text-align: left;
+}
+
+nav ul li ul li a {
+    color: rgb(39, 12, 194);
+    padding: 10px 20px;
+}
+
+nav ul li ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Header styles */
+header {
+    background-color: #5c5757;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.slideshow {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid steelblue;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slide 15s infinite;
+}
+
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slideshow img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Product section styles */
+.products {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between product cards */
+}
+
+.products h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: calc(25% - 20px); /* Adjust width as needed */
+    text-align: left;
+    background-color: #E6E6FA; /* Light blue background for entire product */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 300px; /* Fixed width for square images */
+    height: 160px; /* Fixed height for square images */
+    object-fit: cover; /* Ensure image covers the container while maintaining aspect ratio */
+    background-color: #E6E6FA; /* Light blue background for image */
+    padding: 10px; /* Padding around image */
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: black;
+    background-color: #E6E6FA; /* Light blue background for product name */
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product p {
+    margin: 10px 0;
+    color: blue; /* Blue text for prices */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-top: auto;
+    background-color: #dedef3;
+    border-radius: 8px;
+    border: 2px solid blue; /* Blue border for button */
+    color: orange; /* Orange text for button */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, border 0.3s;
+    font-size: 20px;
+}
+
+.product button:hover {
+    background-color: rgb(250, 234, 230);
+    border: 2px solid rgb(0, 255, 76);
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Form container styles */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.row input[type="text"],
+.row input[type="email"],
+select {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.row input:last-child {
+    margin-right: 0;
+}
+
+select {
+    width: 100%;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+form button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.form-image {
+    max-width: 500px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-image img {
+    width: 100%;
+    height: auto;
+}
